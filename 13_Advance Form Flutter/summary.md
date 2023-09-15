@@ -3,6 +3,7 @@ Summary - Advance Form Flutter
 1. Date Picker
 
 Widget yang memungkinkan pengguna untuk memasukkan tanggal, seperti tanggal kelahiran, waktu pemesanan tiket, jadwal reservasi restoran, atau waktu pertemuan. Berikut adalah cara membuat Date Picker:
+
     - Menggunakan fungsi bawaan Flutter showDatePicker.
     - Fungsi showDatePicker mengembalikan tipe data future.
     - Menampilkan dialog date picker dengan desain material.
@@ -13,6 +14,7 @@ Widget yang memungkinkan pengguna untuk memasukkan tanggal, seperti tanggal kela
 2. Color Picker
 
 Widget ini memungkinkan pengguna untuk memilih warna, yang dapat digunakan dalam berbagai konteks. Berikut adalah cara membuat Color Picker:
+
     - Menggunakan paket flutter_colorpicker, yang dapat diambil dari pub.dev.
     - Sebelum digunakan, tambahkan paket tersebut ke dalam file pubspec.yaml.
     - Menyiapkan variabel yang diperlukan.
