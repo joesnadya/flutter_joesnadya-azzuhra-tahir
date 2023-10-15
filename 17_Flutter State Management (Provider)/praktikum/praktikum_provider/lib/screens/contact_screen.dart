@@ -280,21 +280,19 @@ class _ContactScreenState extends State<ContactScreen> {
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
                                 // Menyimpan data kontak yang baru dibuat
-                                String name = nameController.text;
-                                String phoneNumber = phoneController.text;
-                                String date = dateController.text;
-                                String color = colorController.text;
-                                String file = fileController.text;
+                                final newContact = ContactModel(
+                                  name: nameController.text,
+                                  phoneNumber: phoneController.text,
+                                  date: dateController.text,
+                                  color: colorController.text,
+                                  file: fileController.text,
+                                );
 
                                 // Mendapatkan akses ke ContactProvider dan menambahkan kontak baru ke daftar
-                                final contactProvider = Provider.of<ContactProvider>(context, listen: false);
-                                contactProvider.addContact(Contact(
-                                  name: name,
-                                  phoneNumber: phoneNumber,
-                                  date: date,
-                                  color: color,
-                                  file: file,
-                                ) as ContactModel);
+                                final contactProvider =
+                                    Provider.of<ContactProvider>(context,
+                                        listen: false);
+                                contactProvider.addContact(newContact);
 
                                 // setState(() {
                                 //   contacts.add(Contact(
@@ -312,13 +310,6 @@ class _ContactScreenState extends State<ContactScreen> {
                                 dateController.clear();
                                 colorController.clear();
                                 fileController.clear();
-
-                                // Menampilkan data kontak di konsol
-                                print('Name: $name');
-                                print('Phone Number: $phoneNumber');
-                                print('Date: $date');
-                                print('Color: $color');
-                                print('File: $file');
                               }
                             },
                             child: const Text(
@@ -344,7 +335,8 @@ class _ContactScreenState extends State<ContactScreen> {
                     });
                   },
                   onUpdate: (index, newName, newPhoneNumber) {
-                    contactProvider.updateContact(index, newName, newPhoneNumber);
+                    contactProvider.updateContact(
+                        index, newName, newPhoneNumber);
                   },
                 ),
               ],

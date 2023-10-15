@@ -1,4 +1,6 @@
 // Kelas ContactModel merepresentasikan model data kontak
+import '../screens/contact_screen.dart';
+
 class ContactModel {
   String name;
   String phoneNumber;
@@ -13,4 +15,11 @@ class ContactModel {
     required this.color,
     required this.file,
   });
+
+  ContactModel.fromContact(Contact contact)
+      : name = contact.name,
+        phoneNumber = contact.phoneNumber,
+        date = contact.date,
+        color = contact.color,
+        file = contact.file;
 }
